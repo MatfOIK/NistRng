@@ -62,13 +62,12 @@ class Test:
     """
 
     def __init__(self,
-                 name: str,
-                 significance_value: float):
+                name: str,
+                significance_value: float):
         self.name: str = name
         self.significance_value: float = significance_value
 
-    def _execute(self,
-                 bits: numpy.ndarray) -> Result:
+    def _execute(self, bits: numpy.ndarray) -> Result:
         """
         Execute the test returning a Result object upon completion.
 

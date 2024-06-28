@@ -15,7 +15,8 @@ import numpy
 
 # Import src
 
-from nistrng import *
+from functions import *
+from sp800_22r1a import *
 
 if __name__ == "__main__":
     # Generate the sequence of integers and pack it in its 8-bit representation

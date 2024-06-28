@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "matfoik-f-nistrng"
+version = "0.1.0"
+description = "NIST Test Suite for Random Number Generators"
+authors = ["Luca Pasqualini"]
+license = "BSD 3-Clause"
+readme = "README.md"
+packages = [{include = "matfoik_f_nistrng"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+numpy = "^2.0.0"
+scipy = "^1.14.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

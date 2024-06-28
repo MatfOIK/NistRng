@@ -17,7 +17,7 @@ import copy
 
 # Import required src
 
-from nistrng import Test, Result
+from sp800_22r1a.test import Test, Result
 
 
 class BinaryMatrix:

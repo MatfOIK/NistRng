@@ -15,9 +15,24 @@ import numpy
 
 # Import required src
 
-from nistrng import Test
+from sp800_22r1a.test import Test
+from sp800_22r1a.test import Result
 
-from nistrng.sp800_22r1a import *
+from sp800_22r1a.test_approximate_entropy import ApproximateEntropyTest
+from sp800_22r1a.test_binary_matrix_rank import BinaryMatrixRankTest
+from sp800_22r1a.test_cumulative_sums import CumulativeSumsTest
+from sp800_22r1a.test_discrete_fourier_transform import DiscreteFourierTransformTest
+from sp800_22r1a.test_frequency_within_block import FrequencyWithinBlockTest
+from sp800_22r1a.test_linear_complexity import LinearComplexityTest
+from sp800_22r1a.test_longest_run_ones_in_a_block import LongestRunOnesInABlockTest
+from sp800_22r1a.test_maurers_universal import MaurersUniversalTest
+from sp800_22r1a.test_monobit import MonobitTest
+from sp800_22r1a.test_non_overlapping_template_matching import NonOverlappingTemplateMatchingTest
+from sp800_22r1a.test_overlapping_template_matching import OverlappingTemplateMatchingTest
+from sp800_22r1a.test_random_excursion import RandomExcursionTest
+from sp800_22r1a.test_random_excursion_variant import RandomExcursionVariantTest
+from sp800_22r1a.test_runs import RunsTest
+from sp800_22r1a.test_serial import SerialTest
 
 # Define default NIST battery constant
 
@@ -65,8 +80,7 @@ def run_all_battery(bits: numpy.ndarray, battery: dict,
     return results
 
 
-def run_in_order_battery(bits: numpy.ndarray, battery: dict,
-                         check_eligibility: bool = True) -> []:
+def run_in_order_battery(bits: numpy.ndarray, battery: dict, check_eligibility: bool = True) -> []:
     """
     Run all the given tests in the battery with the given bits as input and strictly following the dict order, i.e. not
     trying the following test is the one before is not passed.
@@ -135,8 +149,7 @@ def check_eligibility_all_battery(bits: numpy.ndarray, battery: dict) -> dict:
     return results
 
 
-def check_eligibility_by_name_battery(test_name: str,
-                                      bits: numpy.ndarray, battery: dict) -> bool:
+def check_eligibility_by_name_battery(test_name: str, bits: numpy.ndarray, battery: dict) -> bool:
     """
     Run the given test in the battery by name with the given bits as input.
     E.g. of a battery of test is the sp800-22r1a test battery.
